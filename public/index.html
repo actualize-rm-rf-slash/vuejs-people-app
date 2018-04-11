@@ -27,7 +27,7 @@
       <button v-on:click="createPerson()">Add person</button>
     </div>
 
-    <h1>All people</h1>
+    <h1>All people ({{ people.length }} total)</h1>
     <div v-for="person in people">
       <h2>{{ person.name }}</h2>
       <p>{{ person.bio }}</p>
