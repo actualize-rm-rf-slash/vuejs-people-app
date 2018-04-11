@@ -20,7 +20,14 @@
 <template id="home-page">
   <div class="vue-component">
 
-    <h2>All people</h2>
+    <h1>Create a person</h1>
+    <div>
+      Name: <input type="text" v-model="newPersonName">
+      Bio: <input type="text" v-model="newPersonBio">
+      <button v-on:click="createPerson()">Add person</button>
+    </div>
+
+    <h1>All people</h1>
     <div v-for="person in people">
       <h2>{{ person.name }}</h2>
       <p>{{ person.bio }}</p>
