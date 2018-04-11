@@ -47,6 +47,9 @@ var HomePage = {
     deletePerson: function(inputPerson) {
       var index = this.people.indexOf(inputPerson);
       this.people.splice(index, 1);
+    },
+    toggleBioVisible: function(inputPerson) {
+      inputPerson.bioVisible = !inputPerson.bioVisible;
     }
   },
   computed: {}
