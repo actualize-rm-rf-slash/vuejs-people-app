@@ -18,12 +18,17 @@ var HomePage = {
   },
   methods: {
     createPerson: function() {
-      this.people.push({
+      var params = {
         name: this.newPersonName,
         bio: this.newPersonBio
-      });
-      this.newPersonName = "";
-      this.newPersonBio = "";
+      };
+      axios.post("/v1/people", params).then(
+        function(response) {
+          this.people.push(response.data);
+          this.newPersonName = "";
+          this.newPersonBio = "";
+        }.bind(this)
+      );
     },
     deletePerson: function(inputPerson) {
       var index = this.people.indexOf(inputPerson);
