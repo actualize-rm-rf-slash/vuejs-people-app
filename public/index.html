@@ -20,7 +20,11 @@
 <template id="home-page">
   <div class="vue-component">
 
-    <h1>{{ message }}</h1>
+    <h2>All people</h2>
+    <div v-for="person in people">
+      <h2>{{ person.name }}</h2>
+      <p>{{ person.bio }}</p>
+    </div>
 
   </div>
 </template>
