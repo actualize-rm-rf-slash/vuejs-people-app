@@ -24,6 +24,10 @@
 
 <template id="home-page">
   <div class="vue-component">
+    
+    <ul>
+      <li v-for="error in errors">{{ error }}</li>
+    </ul>
 
     <h1>Create a person</h1>
     <div>
@@ -37,6 +41,12 @@
       <h2 v-on:click="toggleBioVisible(person)">{{ person.name }}</h2>
       <p v-bind:class="{strike: person.bioVisible}">{{ person.bio }}</p>
       <button v-on:click="deletePerson(person)">Delete</button>
+      <h4>Update the person</h4>
+      <div>
+        Name: <input type="text" v-model="editPersonName">
+        Bio: <input type="text" v-model="editPersonBio">
+        <button v-on:click="updatePerson(person)">Update</button>
+      </div>
     </div>
 
   </div>
