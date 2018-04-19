@@ -1,4 +1,4 @@
-/* global Vue, VueRouter, axios */
+/* global Vue, VueRouter, axios, google */
 
 var HomePage = {
   template: "#home-page",
@@ -18,6 +18,13 @@ var HomePage = {
         this.people = response.data;
       }.bind(this)
     );
+  },
+  mounted: function() {
+    var map;
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8
+    });
   },
   methods: {
     createPerson: function() {

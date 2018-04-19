@@ -6,10 +6,14 @@
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script src="index.js" defer></script>
   <style>
     .strike {
       text-decoration: line-through;
+    }
+    #map {
+      height: 100px;
     }
   </style>
 </head>
@@ -19,6 +23,7 @@
     <router-view></router-view>
 
   </div>
+
 </body>
 </html>
 
@@ -35,6 +40,10 @@
       Bio: <input type="text" v-model="newPersonBio">
       <button v-on:click="createPerson()">Add person</button>
     </div>
+
+
+    <div id="map"></div>
+
 
     <h1>All people ({{ people.length }} total)</h1>
     <div v-for="person in people">
